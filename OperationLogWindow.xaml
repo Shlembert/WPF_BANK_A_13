@@ -1,0 +1,15 @@
+﻿<Window x:Class="BankApp.OperationLogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Лог операций" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+            <TextBlock Text="Лог операций" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+            <ListBox x:Name="OperationLogListBox" Width="700" Height="300" Margin="0,0,0,20"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Сохранить лог" Width="100" Margin="0,0,10,0" Click="SaveLogButton_Click"/>
+                <Button Content="Загрузить лог" Width="100" Click="LoadLogButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

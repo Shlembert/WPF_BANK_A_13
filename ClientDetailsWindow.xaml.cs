@@ -1,15 +1,18 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace BankApp
 {
     public partial class ClientDetailsWindow : Window
     {
         private Client client;
+        private string clientName;
 
         public ClientDetailsWindow(Client client)
         {
             InitializeComponent();
             this.client = client;
+            this.clientName = client.Name;
             NameTextBlock.Text = client.Name;
             AccountsDataGrid.ItemsSource = client.Accounts;
         }
@@ -17,7 +20,12 @@ namespace BankApp
         private void NewAccountButton_Click(object sender, RoutedEventArgs e)
         {
             NewAccountWindow newAccountWindow = new NewAccountWindow(client);
+            newAccountWindow.AccountAdded += NewAccountWindow_AccountAdded;
             newAccountWindow.ShowDialog();
+        }
+
+        private void NewAccountWindow_AccountAdded(object sender, Account newAccount)
+        {
             AccountsDataGrid.Items.Refresh();
         }
 
@@ -53,9 +61,9 @@ namespace BankApp
             {
                 try
                 {
-                    DepositWithdrawWindow depositWindow = new DepositWithdrawWindow(selectedAccount, true);
+                    DepositWithdrawWindow depositWindow = new DepositWithdrawWindow(selectedAccount, true, clientName);
+                    depositWindow.BalanceUpdated += DepositWindow_BalanceUpdated;
                     depositWindow.ShowDialog();
-                    AccountsDataGrid.Items.Refresh();
                 }
                 catch (InvalidOperationException ex)
                 {
@@ -74,9 +82,9 @@ namespace BankApp
             {
                 try
                 {
-                    DepositWithdrawWindow withdrawWindow = new DepositWithdrawWindow(selectedAccount, false);
+                    DepositWithdrawWindow withdrawWindow = new DepositWithdrawWindow(selectedAccount, false, clientName);
+                    withdrawWindow.BalanceUpdated += WithdrawWindow_BalanceUpdated;
                     withdrawWindow.ShowDialog();
-                    AccountsDataGrid.Items.Refresh();
                 }
                 catch (InvalidOperationException ex)
                 {
@@ -87,6 +95,16 @@ namespace BankApp
             {
                 MessageBox.Show("Выберите счет для списания средств.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void DepositWindow_BalanceUpdated(object sender, EventArgs e)
+        {
+            AccountsDataGrid.Items.Refresh();
+        }
+
+        private void WithdrawWindow_BalanceUpdated(object sender, EventArgs e)
+        {
+            AccountsDataGrid.Items.Refresh();
         }
     }
 }

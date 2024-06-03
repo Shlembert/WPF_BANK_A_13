@@ -70,6 +70,7 @@ namespace BankApp
                             selectedAccount.Deposit(amount);
                             MessageBox.Show($"Средства успешно переведены на счет {selectedAccountNumber}");
                             ClientDataHandler.SaveClients(MainWindow.Clients);
+                            OperationLogWindow.AddOperationLog(new OperationLog(DateTime.Now, "Перевод на свой счет", client.Name, $"{sourceAccount.AccountNumber} -> {selectedAccount.AccountNumber}", amount));
                             this.Close();
                         }
                         else
@@ -108,6 +109,7 @@ namespace BankApp
 
                         MessageBox.Show($"Средства успешно переведены на счет клиента {selectedClient.Name}");
                         ClientDataHandler.SaveClients(MainWindow.Clients);
+                        OperationLogWindow.AddOperationLog(new OperationLog(DateTime.Now, "Перевод другому клиенту", $"{client.Name} -> {selectedClient.Name}", $"{sourceAccount.AccountNumber} -> {destinationAccount.AccountNumber}", amount));
                         this.Close();
                     }
                     else
@@ -115,14 +117,6 @@ namespace BankApp
                         MessageBox.Show("Недостаточно средств на счете для перевода.");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Выберите клиента для перевода.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Выберите тип перевода.");
             }
         }
 

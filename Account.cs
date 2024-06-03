@@ -2,6 +2,7 @@
 
 public abstract class Account
 {
+    public Client Client { get; set; }
     public int AccountNumber { get; set; }
     public decimal Balance { get; set; }
     public DateTime CreationDate { get; set; }

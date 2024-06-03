@@ -50,5 +50,11 @@ namespace BankApp
                 }
             }
         }
+
+        private void OpenLogWindow_Click(object sender, RoutedEventArgs e)
+        {
+            OperationLogWindow logWindow = new OperationLogWindow();
+            logWindow.Show();
+        }
     }
 }

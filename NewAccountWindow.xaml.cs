@@ -5,6 +5,8 @@ namespace BankApp
 {
     public partial class NewAccountWindow : Window
     {
+        public event EventHandler<Account> AccountAdded;
+
         private Client client;
 
         public NewAccountWindow(Client client)
@@ -16,7 +18,7 @@ namespace BankApp
         private string GenerateAccountNumber()
         {
             Random random = new Random();
-            return random.Next(100000000, 999999999).ToString(); // Преобразование числа в строку
+            return random.Next(100000000, 999999999).ToString();
         }
 
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
@@ -36,13 +38,14 @@ namespace BankApp
             string accountNumber = AccountNumberTextBox.Text.Replace(" ", "");
             decimal initialBalance = 0;
 
+            Account newAccount;
             if (DepositRadioButton.IsChecked == true)
             {
-                client.Accounts.Add(new DepositAccount(int.Parse(accountNumber), initialBalance));
+                newAccount = new DepositAccount(int.Parse(accountNumber), initialBalance);
             }
             else if (NonDepositRadioButton.IsChecked == true)
             {
-                client.Accounts.Add(new NonDepositAccount(int.Parse(accountNumber), initialBalance));
+                newAccount = new NonDepositAccount(int.Parse(accountNumber), initialBalance);
             }
             else
             {
@@ -50,9 +53,13 @@ namespace BankApp
                 return;
             }
 
+            client.Accounts.Add(newAccount);
             ClientDataHandler.SaveClients(MainWindow.Clients);
+            AccountAdded?.Invoke(this, newAccount);
+            OperationLogWindow.AddOperationLog(new OperationLog(DateTime.Now, "Создан новый счет", client.Name, accountNumber, initialBalance));
             this.Close();
         }
+
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {

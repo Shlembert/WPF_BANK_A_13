@@ -60,11 +60,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\WPF_Bank_A_12\\Wpf_Bank_A_12.csproj",
+      "projectUniqueName": "D:\\GitHub\\WPF_BANK_A_13\\Wpf_Bank_A_12.csproj",
       "projectName": "Wpf_Bank_A_12",
-      "projectPath": "D:\\GitHub\\WPF_Bank_A_12\\Wpf_Bank_A_12.csproj",
+      "projectPath": "D:\\GitHub\\WPF_BANK_A_13\\Wpf_Bank_A_12.csproj",
       "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\WPF_Bank_A_12\\obj\\",
+      "outputPath": "D:\\GitHub\\WPF_BANK_A_13\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",

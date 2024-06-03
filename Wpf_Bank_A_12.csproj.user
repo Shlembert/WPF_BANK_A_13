@@ -19,6 +19,9 @@
     <Compile Update="NewClientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="OperationLogWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="TransferWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="NewClientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OperationLogWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TransferWindow.xaml">

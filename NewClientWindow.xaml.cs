@@ -19,6 +19,7 @@ namespace BankApp
             {
                 Client newClient = new Client(clientName);
                 ClientAdded?.Invoke(this, newClient);
+                OperationLogWindow.AddOperationLog(new OperationLog(DateTime.Now, "Добавлен новый клиент", clientName, string.Empty, 0));
                 this.Close();
             }
             else

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\GitHub\WPF_Bank_A_12\obj\Debug\net8.0-windows\
+D:\GitHub\WPF_BANK_A_13\obj\Debug\net8.0-windows\
 Wpf_Bank_A_12
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-D:\GitHub\WPF_Bank_A_12\App.xaml
-6829726633
+D:\GitHub\WPF_BANK_A_13\App.xaml
+7-979586457
 
-19-1132544447
+21717741561
 199301157064
-ClientDetailsWindow.xaml;DepositWithdrawWindow.xaml;MainWindow.xaml;NewAccountWindow.xaml;NewClientWindow.xaml;TransferWindow.xaml;
+ClientDetailsWindow.xaml;DepositWithdrawWindow.xaml;MainWindow.xaml;NewAccountWindow.xaml;NewClientWindow.xaml;OperationLogWindow.xaml;TransferWindow.xaml;
 
-False
+True
 
