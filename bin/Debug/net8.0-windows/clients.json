@@ -1,0 +1,41 @@
+{
+  "$type": "System.Collections.Generic.List`1[[Client, Wpf_Bank_A_12]], System.Private.CoreLib",
+  "$values": [
+    {
+      "$type": "Client, Wpf_Bank_A_12",
+      "Name": "Вася",
+      "Accounts": {
+        "$type": "System.Collections.Generic.List`1[[Account, Wpf_Bank_A_12]], System.Private.CoreLib",
+        "$values": [
+          {
+            "$type": "DepositAccount, Wpf_Bank_A_12",
+            "AccountNumber": 989739008,
+            "Balance": 150.0,
+            "CreationDate": "2024-05-30T20:31:04.4932862+03:00"
+          },
+          {
+            "$type": "DepositAccount, Wpf_Bank_A_12",
+            "AccountNumber": 465924130,
+            "Balance": 50.0,
+            "CreationDate": "2024-05-30T21:38:15.1960401+03:00"
+          }
+        ]
+      }
+    },
+    {
+      "$type": "Client, Wpf_Bank_A_12",
+      "Name": "Петя",
+      "Accounts": {
+        "$type": "System.Collections.Generic.List`1[[Account, Wpf_Bank_A_12]], System.Private.CoreLib",
+        "$values": [
+          {
+            "$type": "DepositAccount, Wpf_Bank_A_12",
+            "AccountNumber": 685133085,
+            "Balance": 150.0,
+            "CreationDate": "2024-05-31T10:31:42.4844207+03:00"
+          }
+        ]
+      }
+    }
+  ]
+}

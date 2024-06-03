@@ -1,0 +1,21 @@
+﻿<Window x:Class="BankApp.NewAccountWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Создание нового счета" Height="300" Width="400">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+            <TextBlock Text="Тип счета:" FontSize="16" Margin="0,0,0,10"/>
+            <RadioButton x:Name="DepositRadioButton" Content="Депозитный" GroupName="AccountType" Margin="0,0,0,5"/>
+            <RadioButton x:Name="NonDepositRadioButton" Content="Не депозитный" GroupName="AccountType" Margin="0,0,0,20"/>
+
+            <TextBox x:Name="AccountNumberTextBox" Width="200" Margin="0,0,0,20" IsReadOnly="True"/>
+
+            <Button Content="Сгенерировать" Width="150" HorizontalAlignment="Center" Margin="0,0,0,10" Click="GenerateButton_Click"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Готово" Width="100" Margin="0,0,10,0" Click="DoneButton_Click"/>
+                <Button Content="Отмена" Width="100" Click="CancelButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

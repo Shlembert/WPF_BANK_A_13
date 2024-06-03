@@ -1,0 +1,20 @@
+﻿<Window x:Class="BankApp.TransferWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Перевод средств" Height="300" Width="400">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+            <TextBlock x:Name="SourceAccountTextBlock" FontWeight="Bold" Visibility="Collapsed" Margin="0,0,0,5"/>
+            <RadioButton x:Name="SelfTransferRadioButton" Content="На свой счет" GroupName="TransferType" Margin="0,0,0,5" Checked="SelfTransferRadioButton_Checked"/>
+            <RadioButton x:Name="OtherClientTransferRadioButton" Content="На счет другого клиента" GroupName="TransferType" Margin="0,0,0,10" Checked="OtherClientTransferRadioButton_Checked"/>
+            <ComboBox x:Name="ClientsComboBox" Width="200" Margin="0,0,0,5" Visibility="Collapsed"/>
+            <ComboBox x:Name="AccountsComboBox" Width="200" Margin="0,0,0,10"/>
+            <TextBlock Text="Введите сумму:" Margin="0,0,0,5"/>
+            <TextBox x:Name="AmountTextBox" Width="200" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Перевести" Width="100" Margin="0,0,10,0" Click="TransferButton_Click"/>
+                <Button Content="Отмена" Width="100" Click="CancelButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

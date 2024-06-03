@@ -1,0 +1,38 @@
+﻿<Window x:Class="BankApp.ClientDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:BankApp"
+        Title="Данные клиента" Height="450" Width="800">
+    <Window.Resources>
+        <local:AccountTypeConverter x:Key="AccountTypeConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок с именем клиента -->
+        <TextBlock x:Name="NameTextBlock" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="10"/>
+
+        <!-- Таблица с счетами клиента -->
+        <DataGrid x:Name="AccountsDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер счета" Binding="{Binding AccountNumber}" Width="*" />
+                <DataGridTextColumn Header="Сумма" Binding="{Binding Balance}" Width="*" />
+                <DataGridTextColumn Header="Тип счета" Binding="{Binding Converter={StaticResource AccountTypeConverter}}" Width="*" />
+                <DataGridTextColumn Header="Дата создания" Binding="{Binding CreationDate}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Кнопки управления -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Content="Новый счет" Click="NewAccountButton_Click" Margin="5"/>
+            <Button Content="Удалить счет" Click="DeleteAccountButton_Click" Margin="5"/>
+            <Button Content="Перевести" Click="TransferButton_Click" Margin="5"/>
+            <Button Content="Пополнить" Click="DepositButton_Click" Margin="5"/>
+            <Button Content="Списать" Click="WithdrawButton_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
