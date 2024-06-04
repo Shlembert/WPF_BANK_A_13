@@ -11,7 +11,7 @@
             "$type": "DepositAccount, Wpf_Bank_A_12",
             "Client": null,
             "AccountNumber": 477554837,
-            "Balance": 850.0,
+            "Balance": 1050.0,
             "CreationDate": "2024-06-03T10:27:15.0974648+03:00"
           },
           {
@@ -36,6 +36,22 @@
             "AccountNumber": 202337713,
             "Balance": 50.0,
             "CreationDate": "2024-06-03T10:39:15.7613037+03:00"
+          }
+        ]
+      }
+    },
+    {
+      "$type": "Client, Wpf_Bank_A_12",
+      "Name": "Боря",
+      "Accounts": {
+        "$type": "System.Collections.Generic.List`1[[Account, Wpf_Bank_A_12]], System.Private.CoreLib",
+        "$values": [
+          {
+            "$type": "DepositAccount, Wpf_Bank_A_12",
+            "Client": null,
+            "AccountNumber": 178333842,
+            "Balance": 500.0,
+            "CreationDate": "2024-06-04T07:47:55.1670618+03:00"
           }
         ]
       }
